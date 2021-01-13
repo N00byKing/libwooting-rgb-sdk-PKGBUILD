@@ -2,7 +2,7 @@ _gitname=wooting-rgb-sdk
 pkgname="libwooting-rgb-sdk-git"
 url='https://github.com/WootingKb/wooting-rgb-sdk'
 arch=("x86_64")
-pkgver=v1.0.0.r20.g768319f
+pkgver=5c9975b
 pkgrel=1
 pkgdesc="Wooting Keyboard RGB SDK"
 provides=('libwooting-rgb-sdk')
@@ -22,7 +22,7 @@ build() {
     cd "$srcdir/$_gitname"
     git submodule update --init
     cd linux
-    make
+    CFLAGS+=" -fPIC" make
 }
 
 package() {
